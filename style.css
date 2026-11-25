@@ -1,0 +1,919 @@
+:root {
+    --background-color: #F5F5F5;
+    --background-dark: #e7e7e7;
+    --accent-color: #8B0062;
+    --accent-mutted: #c94da4;
+    --accent-light: #ff9be1ab;
+    --accent-dark: #3D002B;
+    --text-color: #1A1D1A;
+    --line-red: #c81d25;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 1px var(--accent-color);
+    background-color: var(--background-dark);
+
+    margin: 10px;
+    padding: 10px 25px 10px 10px;
+    border-radius: 100px;
+}
+
+header img {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav .active {
+    border-bottom: solid 3px var(--accent-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.hero-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+
+    border-bottom: solid 2px var(--accent-dark);
+}
+
+
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.button-big {
+    z-index: 2;
+
+    background: linear-gradient(0deg, var(--accent-mutted) 3%, var(--accent-color) 50%);
+    border: solid 2px var(--accent-dark);
+    padding: 20px 30px;
+    font-size: 2rem;
+    align-self: center;
+    border-radius: 100px;
+    color: var(--background-color);
+}
+
+#erosi-button {
+    transform: translateY(-50%);
+}
+
+.spacer {
+    display: flex;
+    height: 50px;
+}
+
+#whyRenfe {
+    border-top: solid 1px var(--accent-dark);
+    border-bottom: solid 1px var(--accent-dark);
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+
+    background-image: linear-gradient(135deg,
+            var(--accent-dark) 0.5px,
+            transparent 0.5px,
+            transparent calc(50% - 0.5px),
+            var(--accent-dark) calc(50% - 0.5px),
+            var(--accent-dark) calc(50% + 0.5px),
+            transparent calc(50% + 0.5px),
+            transparent calc(100% - 0.5px),
+            var(--accent-dark) calc(100% - 0.5px));
+    background-size: 14px 14px;
+}
+
+.block-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.material-symbols-outlined {
+    font-size: 40px;
+
+    font-variation-settings:
+        'FILL' 0,
+        /* 0 = solo línea, 1 = relleno sólido */
+        'wght' 600,
+        /* Grosor: de 100 (muy fino) a 700 (muy grueso) */
+        'GRAD' 0,
+        'opsz' 48;
+    /* Igual que tu font-size (entre 20 y 48) para que no pierda nitidez */
+}
+
+.whyRenfeBlock {
+    color: var(--accent-dark);
+    font-weight: 100;
+
+
+    border-right: solid 1px var(--accent-dark);
+    border-left: solid 1px var(--accent-dark);
+
+    height: 200px;
+    width: 25%;
+    min-width: 450px;
+
+    padding: 20px;
+    background: linear-gradient(0deg, var(--background-dark) 4%, var(--background-color) 57%);
+}
+
+
+
+.promo-carousel {
+    --slide-w: 62%;
+    --gap: 16px;
+
+    width: 100%;
+    padding: 24px 0;
+    overflow: hidden;
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 var(--slide-w);
+    height: 315px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: height 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    border: solid 1px var(--accent-dark);
+
+}
+
+.carousel-slide.is-active {
+    height: 420px;
+    border-radius: 22px;
+    cursor: default;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 24px;
+    min-height: 34px;
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background-color: #d4d4d8;
+    cursor: pointer;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-dot.is-active {
+    width: 26px;
+    background-color: var(--accent-color);
+}
+
+.carousel-arrows {
+    position: absolute;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-dark);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.arrow-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.arrow-btn:active {
+    transform: scale(0.94);
+}
+
+.arrow-btn .material-symbols-outlined {
+    font-size: 20px;
+    font-variation-settings: 'wght' 500, 'opsz' 20;
+}
+
+.carousel-track.no-transition,
+.carousel-track.no-transition .carousel-slide {
+    transition: none !important;
+}
+
+
+.bilatuIbilbidea {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ibilbide-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    min-height: 74px;
+    box-sizing: border-box;
+}
+
+.ibilbide-label {
+    width: 54px;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+    user-select: none;
+}
+
+.ibilbide-field {
+    position: relative;
+    flex: 1;
+}
+
+.ibilbide-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    padding: 4px 0;
+}
+
+.ibilbide-field input::placeholder {
+    font-weight: 400;
+    color: #6b7280;
+}
+
+/* Línea separadora central */
+.ibilbide-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0 24px;
+}
+
+/* Botón circular de intercambio */
+.swap-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f4eff8;
+    color: var(--accent-color);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.25s ease;
+}
+
+.swap-btn:hover {
+    background-color: #eadff3;
+}
+
+.swap-btn.is-rotated {
+    transform: rotate(180deg);
+}
+
+.swap-btn .material-symbols-outlined {
+    font-size: 20px;
+    font-variation-settings: 'wght' 500, 'opsz' 20;
+}
+
+/* Desplegable de estaciones */
+.geltoki-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -12px;
+    right: -12px;
+    z-index: 50;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    max-height: 240px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.geltoki-dropdown.is-open {
+    display: block;
+}
+
+.geltoki-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1f2937;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.geltoki-dropdown li::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--line-red);
+    flex-shrink: 0;
+}
+
+.geltoki-dropdown li:hover {
+    background-color: #f4eff8;
+    color: var(--accent-color);
+}
+
+.geltoki-dropdown li.empty-msg {
+    color: #6b7280;
+    cursor: default;
+}
+
+.geltoki-dropdown li.empty-msg::before {
+    display: none;
+}
+
+.geltoki-dropdown li.empty-msg:hover {
+    background-color: transparent;
+    color: #6b7280;
+}
+
+.linea-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buscar-viajes {
+    width: 150px;
+    height: 30px;
+    border-radius: 0 0 10px 10px;
+    margin: auto;
+    border: solid 1px var(--accent-dark);
+    border-top: none;
+    background-color: var(--accent-light);
+}
+
+.linea {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    /* Ajusta este ancho general a tu gusto */
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid var(--accent-dark);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+.linea>img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 19px 19px 0 0;
+}
+
+.linea .bilatuIbilbidea {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    background-color: #ffffff;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 19px 19px;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ibilbide-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 24px;
+    min-height: 74px;
+    box-sizing: border-box;
+}
+
+.ibilbide-label {
+    width: 54px;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+    user-select: none;
+}
+
+.ibilbide-field {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.ibilbide-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+    padding: 4px 0;
+    box-sizing: border-box;
+}
+
+.ibilbide-field input::placeholder {
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.ibilbide-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0 24px;
+}
+
+.swap-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f4eff8;
+    color: var(--accent-color);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.25s ease;
+}
+
+.swap-btn:hover {
+    background-color: #eadff3;
+}
+
+.swap-btn.is-rotated {
+    transform: rotate(180deg);
+}
+
+.swap-btn .material-symbols-outlined {
+    font-size: 20px;
+    font-variation-settings: 'wght' 500, 'opsz' 20;
+}
+
+/* Desplegable de estaciones */
+.geltoki-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -12px;
+    right: -12px;
+    z-index: 50;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    max-height: 240px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+.geltoki-dropdown.is-open {
+    display: block;
+}
+
+.geltoki-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1f2937;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.geltoki-dropdown li::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--line-red);
+    flex-shrink: 0;
+}
+
+.geltoki-dropdown li:hover {
+    background-color: #f4eff8;
+    color: var(--accent-color);
+}
+
+.geltoki-dropdown li.empty-msg {
+    color: #6b7280;
+    cursor: default;
+}
+
+.geltoki-dropdown li.empty-msg::before {
+    display: none;
+}
+
+.geltoki-dropdown li.empty-msg:hover {
+    background-color: transparent;
+    color: #6b7280;
+}
+
+/* Sustituye la regla "footer { ... }" actual por todo este bloque */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-dark);
+    border-top: solid 2px var(--accent-color);
+    color: var(--background-color);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 50px 25px;
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    background-color: var(--background-color);
+    padding: 8px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+}
+
+.footer-logo img {
+    height: 40px;
+    display: block;
+}
+
+.footer-brand p {
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 100;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.footer-col h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    border-bottom: solid 2px var(--accent-mutted);
+    padding-bottom: 6px;
+    align-self: flex-start;
+}
+
+.footer-col a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 100;
+    transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-mutted);
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-weight: 100;
+}
+
+.footer-contact .material-symbols-outlined {
+    font-size: 22px;
+    color: var(--accent-mutted);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 40px;
+    border-top: solid 1px var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-weight: 100;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.footer-legal a:hover {
+    color: var(--accent-mutted);
+}
+
+
+@media (max-width: 900px) {
+
+    .whyRenfe {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .block-container {
+        flex-direction: column;
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .whyRenfeBlock {
+        width: 100%;
+        border-left: 0;
+        border-right: 0;
+        border-top: solid 1px var(--accent-dark);
+        border-bottom: solid 1px var(--accent-dark);
+
+    }
+
+
+    .promo-carousel {
+        --slide-w: 84%;
+        --gap: 12px;
+    }
+
+    .carousel-slide {
+        height: 270px;
+    }
+
+    .carousel-slide.is-active {
+        height: 350px;
+    }
+
+    .carousel-arrows {
+        right: 16px;
+    }
+
+    .linea {
+        width: 92%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 36px;
+    }
+
+    .footer-col {
+        align-items: center;
+    }
+
+    .footer-col h3 {
+        align-self: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* --- MENU COLAPSABLE PARA MOVILES --- */
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    background: var(--accent-dark);
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+.menu-toggle .material-symbols-outlined {
+    font-size: 26px;
+}
+
+.menu-toggle:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid var(--accent-mutted);
+    outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 9px;
+        border-radius: 100px;
+    }
+
+    header > img {
+        height: 36px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        margin-left: auto;
+    }
+
+    header nav {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        z-index: 1001;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        max-height: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        background: var(--background-dark);
+        border: 1px solid transparent;
+        border-radius: 24px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+        transition:
+            max-height 0.3s ease,
+            padding 0.3s ease,
+            opacity 0.2s ease,
+            visibility 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    header nav.is-open {
+        max-height: 360px;
+        padding: 12px 20px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        border-color: var(--accent-color);
+    }
+
+    header nav a {
+        display: block;
+        padding: 14px 4px;
+        border-bottom: 1px solid rgba(61, 0, 43, 0.14);
+    }
+
+    header nav a:last-child {
+        border-bottom: none;
+    }
+
+    header nav .active {
+        border-bottom: 1px solid rgba(61, 0, 43, 0.14);
+        color: var(--accent-color);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header nav {
+        transition: none;
+    }
+}

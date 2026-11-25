@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renfe</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="assets/logo.webp" alt="renfe logo">
+
+        <button class="menu-toggle" id="menuToggle"
+            type="button"
+            aria-label="Ireki nabigazio-menua"
+            aria-expanded="false"
+            aria-controls="mainNav">
+            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+
+        <nav id="mainNav">
+            <a href="index.html" class="active">Hasiera</a>
+            <a href="#bilatu">Trenak bilatu</a>
+            <a href="#erosi">Billeteak erosi</a>
+            <a href="#erreserbak">Nire erreserbak</a>
+            <a href="#info">Informazioa</a>
+
+        </nav>
+    </header>
+    <main>
+        <div class="hero-container">
+            <img src="assets/renfe-ave.jpg" alt="tren ave">
+        </div>
+        <button class="button-big" id="erosi-button">Billeteak erosi</button>
+
+
+        <div class="spacer"></div>
+
+        <section class="promo-carousel">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <article class="carousel-slide">
+                        <img src="assets/t1.jpg">
+                    </article>
+
+                    <article class="carousel-slide">
+                        <img src="assets/t2.jpg">
+                    </article>
+
+                    <article class="carousel-slide">
+                        <img src="assets/t3.jpg">
+                    </article>
+
+                    <article class="carousel-slide">
+                        <img src="assets/t4.jpg">
+                    </article>
+
+                    <article class="carousel-slide">
+                        <img src="assets/t5.jpg">
+                    </article>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <div class="carousel-dots" id="carouselDots"></div>
+                <div class="carousel-arrows">
+                    <button type="button" class="arrow-btn" id="prevBtn" aria-label="Aurrekoa">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button type="button" class="arrow-btn" id="nextBtn" aria-label="Hurrengoa">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+
+        <section id="whyRenfe">
+            <div class="block-container">
+
+                <div class="whyRenfeBlock">
+                    <span class="material-symbols-outlined">eco</span>
+                    <h2>Ingurumenarekiko konpromisoa.</h2>
+                    <p>Garraiobiderik ekologikoena eta jasangarriena gara, gure planeta zaintzea garrantzitsua baita.
+                    </p>
+
+                </div>
+                <div class="whyRenfeBlock">
+                    <span class="material-symbols-outlined">savings</span>
+                    <h2>Prezio merkeak.</h2>
+                    <p>Gure webgunean bakarrik gozatu ahal izango duzu prezio baxuena, komisiorik edo kudeaketa-gasturik
+                        gabe.</p>
+
+                </div>
+                <div class="whyRenfeBlock">
+                    <span class="material-symbols-outlined">nest_clock_farsight_analog</span>
+                    <h2>Puntualtasunarekiko konpromisoa.</h2>
+                    <p>Garaiz iristea da zure lehentasunetako bat, horregatik lortzen saiatzen gara.</p>
+
+                </div>
+            </div>
+
+        </section>
+
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+
+        <section class="linea-container">
+            <section class="linea">
+                <img src="assets/linea.png" alt="Linea mapa">
+
+                <div class="bilatuIbilbidea">
+                    <!-- Fila de origen -->
+                    <div class="ibilbide-row">
+                        <label for="jatorriaInput" class="ibilbide-label">-ren</label>
+                        <div class="ibilbide-field">
+                            <input type="text" id="jatorriaInput" placeholder="Hautatu jatorria" autocomplete="off">
+                            <ul class="geltoki-dropdown" id="jatorriaDropdown"></ul>
+                        </div>
+                        <button type="button" class="swap-btn" id="swapBtn" aria-label="Aldatu jatorria eta helmuga">
+                            <span class="material-symbols-outlined">swap_vert</span>
+                        </button>
+                    </div>
+
+                    <hr class="ibilbide-divider">
+
+                    <!-- Fila de destino -->
+                    <div class="ibilbide-row">
+                        <label for="helmugaInput" class="ibilbide-label">A</label>
+                        <div class="ibilbide-field">
+                            <input type="text" id="helmugaInput" placeholder="Hautatu helmuga" autocomplete="off">
+                            <ul class="geltoki-dropdown" id="helmugaDropdown"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <button class="buscar-viajes">Bilatu gehiago</button>
+        </section>
+
+
+    </main>
+    <div class="spacer"></div>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/logo.webp" alt="renfe logo">
+                </div>
+                <p>Garraiobide ekologikoena, prezio merkeak eta puntualtasuna zure bidaia guztietarako.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Nabigazioa</h3>
+                <a href="index.html">Hasiera</a>
+                <a href="#bilatu">Trenak bilatu</a>
+                <a href="#erosi">Billeteak erosi</a>
+                <a href="#erreserbak">Nire erreserbak</a>
+                <a href="#info">Informazioa</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Laguntza</h3>
+                <p class="footer-contact">
+                    <span class="material-symbols-outlined">call</span>
+                    900 000 000
+                </p>
+                <p class="footer-contact">
+                    <span class="material-symbols-outlined">mail</span>
+                    laguntza@renfe.eus
+                </p>
+                <p class="footer-contact">
+                    <span class="material-symbols-outlined">schedule</span>
+                    Egunero, 06:00 - 23:00
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Renfe. Eskubide guztiak erreserbatuta.</p>
+            <div class="footer-legal">
+                <a href="#">Pribatutasun politika</a>
+                <a href="#">Cookieak</a>
+                <a href="#">Lege oharra</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- MENU MUGIKORRA ---
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+
+            if (menuToggle && mainNav) {
+                const menuIcon = menuToggle.querySelector('.material-symbols-outlined');
+
+                function closeMenu() {
+                    mainNav.classList.remove('is-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Ireki nabigazio-menua');
+                    menuIcon.textContent = 'menu';
+                }
+
+                menuToggle.addEventListener('click', () => {
+                    const isOpen = mainNav.classList.toggle('is-open');
+
+                    menuToggle.setAttribute('aria-expanded', String(isOpen));
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        isOpen ? 'Itxi nabigazio-menua' : 'Ireki nabigazio-menua'
+                    );
+                    menuIcon.textContent = isOpen ? 'close' : 'menu';
+                });
+
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') closeMenu();
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) closeMenu();
+                });
+            }
+
+            // --- CARRUSEL ---
+            const track = document.getElementById('carouselTrack');
+
+            if (track) {
+                const dotsContainer = document.getElementById('carouselDots');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                const originalSlides = Array.from(track.children);
+                const total = originalSlides.length;
+                const clonesCount = 2;
+
+                const clonesBefore = originalSlides.slice(-clonesCount).map(el => el.cloneNode(true));
+                const clonesAfter = originalSlides.slice(0, clonesCount).map(el => el.cloneNode(true));
+
+                clonesBefore.reverse().forEach(clone => track.prepend(clone));
+                clonesAfter.forEach(clone => track.append(clone));
+
+                const allSlides = Array.from(track.children);
+                let currentIndex = clonesCount;
+                let isAnimating = false;
+
+                originalSlides.forEach((_, idx) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'carousel-dot';
+                    dot.setAttribute('aria-label', `Diapositiva ${idx + 1}`);
+                    dot.addEventListener('click', () => {
+                        if (!isAnimating) goTo(idx + clonesCount);
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = Array.from(dotsContainer.children);
+
+                function updateUI(instant = false) {
+                    if (instant) track.classList.add('no-transition');
+
+                    allSlides.forEach((slide, i) => {
+                        slide.classList.toggle('is-active', i === currentIndex);
+                    });
+
+                    const realIndex = (currentIndex - clonesCount + total) % total;
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('is-active', i === realIndex);
+                    });
+
+                    track.style.transform = `translateX(calc(50% - (${currentIndex} * (var(--slide-w) + var(--gap)) + var(--slide-w) / 2)))`;
+
+                    if (instant) {
+                        void track.offsetWidth;
+                        track.classList.remove('no-transition');
+                    }
+                }
+
+                function goTo(index) {
+                    if (index === currentIndex) return;
+                    isAnimating = true;
+                    currentIndex = index;
+                    updateUI(false);
+                }
+
+                track.addEventListener('transitionend', (e) => {
+                    if (e.target !== track) return;
+                    isAnimating = false;
+
+                    if (currentIndex >= total + clonesCount) {
+                        currentIndex -= total;
+                        updateUI(true);
+                    } else if (currentIndex < clonesCount) {
+                        currentIndex += total;
+                        updateUI(true);
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (!isAnimating) goTo(currentIndex - 1);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (!isAnimating) goTo(currentIndex + 1);
+                });
+
+                allSlides.forEach((slide, i) => {
+                    slide.addEventListener('click', (e) => {
+                        if (e.target.closest('a')) return;
+                        if (!isAnimating && i !== currentIndex) goTo(i);
+                    });
+                });
+
+                let startX = 0;
+                track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
+
+                track.addEventListener('touchend', (e) => {
+                    const diff = startX - e.changedTouches[0].clientX;
+                    if (Math.abs(diff) > 40 && !isAnimating) {
+                        goTo(diff > 0 ? currentIndex + 1 : currentIndex - 1);
+                    }
+                });
+
+                updateUI(true);
+            }
+
+            // --- BUSCADOR DE ESTACIONES ---
+            const jatorriaInput = document.getElementById('jatorriaInput');
+            const helmugaInput = document.getElementById('helmugaInput');
+
+            if (jatorriaInput && helmugaInput) {
+                const geltokiak = [
+                    'Errondo',
+                    'Kontubernio',
+                    'Ametzaga',
+                    'Zubieta',
+                    'Aranburu',
+                    'Etxeberri',
+                    'Mendialde',
+                    'Urumea',
+                    'Urdaneta',
+                    'Malaga'
+                ];
+
+                const jatorriaDropdown = document.getElementById('jatorriaDropdown');
+                const helmugaDropdown = document.getElementById('helmugaDropdown');
+                const swapBtn = document.getElementById('swapBtn');
+
+                function setupAutocomplete(input, dropdown, otherInput) {
+                    function renderList(filterText = '') {
+                        dropdown.innerHTML = '';
+                        const query = filterText.trim().toLowerCase();
+
+                        const filtered = geltokiak.filter(station =>
+                            station.toLowerCase().includes(query)
+                        );
+
+                        if (filtered.length === 0) {
+                            const empty = document.createElement('li');
+                            empty.className = 'empty-msg';
+                            empty.textContent = 'Ez da geltokirik aurkitu';
+                            dropdown.appendChild(empty);
+                        } else {
+                            filtered.forEach(station => {
+                                const li = document.createElement('li');
+                                li.textContent = station;
+
+                                li.addEventListener('mousedown', (e) => {
+                                    e.preventDefault();
+                                    input.value = station;
+                                    if (otherInput.value === station) {
+                                        otherInput.value = '';
+                                    }
+                                    dropdown.classList.remove('is-open');
+                                });
+
+                                dropdown.appendChild(li);
+                            });
+                        }
+
+                        dropdown.classList.add('is-open');
+                    }
+
+                    input.addEventListener('focus', () => renderList(input.value));
+                    input.addEventListener('input', () => renderList(input.value));
+                    input.addEventListener('blur', () => dropdown.classList.remove('is-open'));
+                }
+
+                setupAutocomplete(jatorriaInput, jatorriaDropdown, helmugaInput);
+                setupAutocomplete(helmugaInput, helmugaDropdown, jatorriaInput);
+
+                swapBtn.addEventListener('click', () => {
+                    const temp = jatorriaInput.value;
+                    jatorriaInput.value = helmugaInput.value;
+                    helmugaInput.value = temp;
+                    swapBtn.classList.toggle('is-rotated');
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
